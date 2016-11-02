@@ -1,0 +1,54 @@
+<html>
+    
+    <head>
+        
+        <title>Get Suggestions</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="retrieve.js"></script>
+    
+    </head>
+    
+    <body>
+        
+        <div id="login_stuff">
+        
+            Login <br>
+            Username: <input type="text" id="username_input"><br>
+            Password: <input type="password" id="password_input"><br>
+            <input type="submit" value="Submit" id="login_button">
+            
+        </div>
+        
+        <div id="location_stuff">
+            
+            Enter your coordinates: <br>
+            Latitude: <input type="text" id="latitude_input"/><br>
+            Longitude: <input type="text" id="longitude_input"/><br>
+            <input type="submit" id="location_submit" value="Submit"/>
+            
+            <br>
+            <br>
+            OR
+            <br>
+            <br>
+            
+            Use Philadelphia as your location: <input type="submit" id="simply_submit" value="Submit"/>
+            
+            <br>
+            <br>
+            OR
+            <br>
+            <br>
+            
+            Wander Together by adding the username of your friends (seperated by commas): <br>
+            <input type='text' id="group_input"/>
+            <input type='submit' id="group_submit" value="Submit"/>
+        </div>
+        
+        
+        <div id="suggestions"></div>
+    </body>
+    
+    
+</html>

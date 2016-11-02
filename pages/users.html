@@ -1,0 +1,33 @@
+<html>
+    <head>
+    
+        <title>User Data</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <link rel="stylesheet" href="users.css">
+        
+        <script>
+            var socket = io.connect();
+            window.addEventListener('load',function(){
+                
+                socket.emit('request_users');
+                
+            });
+            
+            socket.on('deliver_users', function(userString){
+                document.getElementById('list').innerHTML = userString;
+            });
+            
+        </script>
+        
+    </head>
+    
+    <body>
+        
+        <div id="list"></div>
+        
+        
+    </body>
+    
+    
+</html>

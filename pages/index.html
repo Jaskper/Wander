@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Wander Registration</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="assets/css/form-elements.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <!-- Favicon and touch icons -->
+        <link rel="shortcut icon" href="assets/ico/favicon.png">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="survey.js"></script>
+    </head>
+
+    <body>
+
+        <!-- Top content -->
+        <div class="top-content">
+        	
+            <div class="inner-bg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-2 text">
+                            <h1><strong>Wander</strong> Registration</h1>
+                            <div class="description">
+                            	<p>
+	                            	Not all who wander are lost.
+                            	</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-offset-3 form-box">
+                        	<div class="form-top">
+                        		<div class="form-top-left">
+                        		    Registration
+                        		</div>
+                            </div>
+                            <div class="form-bottom">
+                                <div id="phase0">
+                                    <div class="form-group">
+                                        <label class="sr-only" for="form-username">Username</label>
+                                        <input type="text" name="form-username" placeholder="Username..." class="form-username form-control" id="username_input">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="form-password">Password</label>
+                                        <input type="password" name="form-password" placeholder="Password... (do not use your real password)" class="form-password form-control" id="password_input">
+                                    </div>
+                                        <button type="submit" id="phase0_submit" class="btn">Sign up!</button>
+                                </div>
+                                
+                                <div id='phase1'>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="form-username">Your hometown: </label>
+                                        <input type="text" placeholder="Hometown..." class="form-username form-control" id="city_input">
+                                    </div>
+                                    <button type="submit" id="phase1_submit" class="btn">Continue</button>
+                                </div>
+                                
+                                <div id='phase2'>
+                                    <div class="form-group">
+                                        <!--<label class="sr-only" for="form-username">List your favorite local food places: </label> -->
+                                        <div>List your favorite local food places:</div>
+                                        <input type="text" placeholder="Food..." class="form-username form-control" id="food1">
+                                        <input type="text" placeholder="Food..." class="form-username form-control" id="food2">
+                                        <input type="text" placeholder="Food..." class="form-username form-control" id="food3">
+                                        <input type="text" placeholder="Food..." class="form-username form-control" id="food4">
+                                        <input type="text" placeholder="Food..." class="form-username form-control" id="food5">
+                                    </div>
+                                    
+                                    <div class = "form-group">
+                                         <div>List your favorite local shopping places:</div>
+                                        <input type="text" placeholder="Shopping..." class="form-username form-control" id="shop1">
+                                        <input type="text" placeholder="Shopping..." class="form-username form-control" id="shop2">
+                                        <input type="text" placeholder="Shopping..." class="form-username form-control" id="shop3">
+                                        <input type="text" placeholder="Shopping..." class="form-username form-control" id="shop4">
+                                        <input type="text" placeholder="Shopping..." class="form-username form-control" id="shop5">
+                                    </div>
+                                    <button type="submit" id="phase2_submit" class="btn">Continue</button>
+                                    
+                                </div>
+                                
+                                <div id='phase3'>
+                                    <div>Would you enjoy this location: </div>
+                                    <div id='location_suggestion_name'></div>
+                                    <button type="submit" class="btn" id="phase3_yes">Yes</button>
+                                    <button type="submit" class="btn" id="phase3_no">No</button>
+                                </div>
+                                
+                                <div id='phase4'>
+                                    <div>Registration Complete!</div>
+                                    <a href="login">Click Here to Login</a>
+                                    <br>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <h3>Already a Wanderer?</h3>
+                        <a class="btn btn-link-2" href="login">Login</a>
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+
+
+        <!-- Javascript -->
+        <script src="assets/js/jquery-1.11.1.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/js/jquery.backstretch.min.js"></script>
+        <script src="assets/js/scripts.js"></script>
+        <!--[if lt IE 10]>
+            <script src="assets/js/placeholder.js"></script>
+        <![endif]-->
+
+    </body>
+
+</html>

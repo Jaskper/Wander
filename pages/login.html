@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Wander Registration</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+        <link rel="stylesheet" href="assets.1/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets.1/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="assets.1/css/form-elements.css">
+        <link rel="stylesheet" href="assets.1/css/style.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <!-- Favicon and touch icons -->
+        <link rel="shortcut icon" href="assets.1/ico/favicon.png">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets.1/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets.1/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets.1/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="assets.1/ico/apple-touch-icon-57-precomposed.png">
+
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="retrieve.js"></script>
+    </head>
+
+    <body>
+
+        <!-- Top content -->
+        <div class="top-content" style="background-color: #87d6ff;">
+        	
+            <div class="inner-bg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-2 text">
+                            <h1><strong>Wander: </strong>Your Travel Guide</h1>
+                            <div class="description">
+                            	<p>
+	                            	Not all who wander are lost.
+                            	</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-offset-3 form-box">
+                        	<div class="form-top">
+                        		<div class="form-top-left">
+                        		    Welcome to Wander!
+                        		</div>
+                            </div>
+                            <div class="form-bottom">
+                                <div id="login_stuff">
+                                    <div class="form-group">
+                                        <input type="text" name="form-username" placeholder="Username..." class="form-username form-control" id="username_input">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" name="form-password" placeholder="Password..." class="form-password form-control" id="password_input">
+                                    </div>
+                                    <button type="submit" id="login_button" class="btn">Login!</button>
+                                </div>
+                                
+                                <div id='location_stuff'>
+                                    <button type="submit" style = "display: block; width: 100%;"id="wander_button" class="btn">Wander!</button>
+                                    <div id="more_options">or click here for more options</div>
+                                    
+                                </div>
+                                
+                                <div id='options'>
+                                    
+                                    <div>Exact position using coordinates:</div>
+                                    <div class="form-group">
+                                        <input type="text" name="form-text" placeholder="Latitude..." class="form-text form-control" id="latitude_input">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" name="form-text" placeholder="Longitude..." class="form-text form-control" id="longitude_input">
+                                    </div>
+                                    <button type="submit" style = "display: block; width: 100%;" id="location_submit" class="btn">Submit</button>
+                                    
+                                    <br>
+                                    
+                                    <div>WanderTogether: mesh preferances with a friend:</div>
+                                    <div class="form-group">
+                                        <input type="text" name="form-text" placeholder="Friend's username..." class="form-text form-control" id="friend_user">
+                                    </div>
+                                    <button type="submit" style = "display: block; width: 100%;" id="group_submit" class="btn">Submit</button>
+                                    
+                                    <br>
+                                    
+                                    <div>Tell Wander more about your food preferances: </div>
+                                    <div class="form-group">
+                                        <input type="text" name="form-text" placeholder="Restaurant you've enjoyed..." class="form-text form-control" id="addition_input">
+                                    </div>
+                                    <button type="submit" style = "display: block; width: 100%;" id="addition_submit" class="btn">Submit</button>
+                                    
+                                    <br>
+                                    <br>
+                                    <br>
+                                    
+                                    <button type="submit" style = "display: block; width: 100%;" id="back_button" class="btn">Back</button>
+                                    
+                                </div>
+                                
+                                <div id="location_stuff_deprecated">
+                                    
+                                    Enter your coordinates: <br>
+                                    Latitude: <input type="text" id="latitude_input"/><br>
+                                    Longitude: <input type="text" id="longitude_input"/><br>
+                                    <input type="submit" id="location_submit" value="Submit"/>
+                                    
+                                    <br>
+                                    <br>
+                                    OR
+                                    <br>
+                                    <br>
+                                    
+                                    Use Philadelphia as your location: <input type="submit" id="simply_submit" value="Submit"/>
+                                    
+                                    <br>
+                                    <br>
+                                    OR
+                                    <br>
+                                    <br>
+                                    
+                                    Wander Together by adding the username of your friends (seperated by commas): <br>
+                                    <input type='text' id="group_input"/>
+                                    <input type='submit' id="group_submit" value="Submit"/>
+                                </div>
+                                
+                                <div id="suggestions"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <h3>Not a Wanderer yet?</h3>
+                        <a class="btn btn-link-2" href="http://www.wander-mikedj60.c9users.io/">Register</a>
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+
+
+        <!-- Javascript -->
+        <script src="assets.1/js/jquery-1.11.1.min.js"></script>
+        <script src="assets.1/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets.1/js/jquery.backstretch.min.js"></script>
+        <script src="assets.1/js/scripts.js"></script>
+        <!--[if lt IE 10]>
+            <script src="assets/js/placeholder.js"></script>
+        <![endif]-->
+
+    </body>
+
+</html>

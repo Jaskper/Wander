@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title>Wander Survey</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="survey.js"></script>
+        <link rel="stylesheet" href="surveyStyle.css">
+    </head>
+    
+    <body>
+        
+        <div id="phase0">
+            Register <br>
+            Username: <input type="text" id="username_input"><br>
+            Password: <input type="password" id="password_input"><br>
+            <input type="submit" value="Submit" id="phase0_submit">
+        </div>
+        
+        <div id="phase1">
+            What city do you live in: <input type="text" id="city_input"><br>    
+            <input type="submit" value="Submit" id="phase1_submit">
+        </div>
+        
+        <div id="phase2">
+            Input your favorite food places: <br>
+            1: <input type="text" id="food1"><br>    
+            2: <input type="text" id="food2"><br>
+            3: <input type="text" id="food3"><br>
+            4: <input type="text" id="food4"><br>
+            5: <input type="text" id="food5"><br>
+            
+            <br>
+            Input your favorite stores around you: <br>
+            1: <input type="text" id="shop1"><br>    
+            2: <input type="text" id="shop2"><br>
+            3: <input type="text" id="shop3"><br>
+            4: <input type="text" id="shop4"><br>
+            5: <input type="text" id="shop5"><br>
+            <input type="submit" value="Submit" id="phase2_submit">
+        </div>
+        
+        <div id="phase3">
+            Would you enjoy this location: <br> <br>
+            <div id='location_suggestion_name'></div> <br>
+            <input type="submit" value="Yes" id="phase3_yes"><input type="submit" value="No" id="phase3_no">
+        </div>
+        
+        <div id="phase4">
+            Registration Complete! <br> <br>
+            <a href="users">Click Here to View User Data</a><br>
+            <a href="retrieve">Click Here to Login</a>
+        </div>
+        
+        
+    </body>
+    
+    
+    
+</html>
