@@ -1,10 +1,10 @@
 {
-  "name": "chat-example",
-  "version": "0.0.0",
-  "description": "A chat example to showcase how to use `socket.io` with a static `express` server with `async` for control flow.",
+  "name": "Wander",
+  "version": "1.0.0",
+  "description": "A travel-recommendation program.",
   "main": "server.js",
   "repository": "",
-  "author": "Mostafa Eweda <mo.eweda@gmail.com>",
+  "author": "Michael Bian <mbian17@cranbrook.edu>",
   "dependencies": {
     "express": "4.14.0",
     "socket.io": "1.4.8",
